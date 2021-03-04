@@ -8,10 +8,10 @@ function signupPageViewed() {
 // The "user" object contains the following properties: name, email, favorite_genre, plan, id
 // e.g. calling user.id will return the user's id
 function accountCreated(user) {
-	mixpanel.track("Account Created", {"Name":user.name, "Email":user.email, "Genre": user.favorite_genre})
-	mixpanel.identify(user.name)
-	mixpanel.register({"Name":user.name, "Email":user.email, "Genre": user.favorite_genre})
-	mixpanel.people.set({"$name":user.name})
+	mixpanel.track("Account Created", {"Name":user.name, "Email":user.email, "Genre": user.favorite_genre});
+	mixpanel.people.set({"$name":user.name});
+	mixpanel.identify(user.name);
+	mixpanel.register({"Name":user.name, "Email":user.email, "Genre": user.favorite_genre});
 	
 }
 
@@ -19,7 +19,7 @@ function accountCreated(user) {
 // The "user" object contains the following properties: name, email, favorite_genre, plan, id
 // e.g. calling user.id will return the user's id
 function login(user) {
-	mixpanel.track("Login", {"Name":user.name, "Email":user.email, "Genre": user.favorite_genre, "Plan": user.plan})
+	mixpanel.track("Login", {"Name":user.name, "Email":user.email, "Genre": user.favorite_genre, "Plan": user.plan});
 }
 
 // This function executes every time a song is played
