@@ -1,6 +1,7 @@
 // This function executes when a user loads the sign up page
 function signupPageViewed() {
 	mixpanel.track("Signup Page Viewed")
+	mixpanel.identify()
 }
 
 // This function executes after a user successfully signs up
@@ -8,6 +9,7 @@ function signupPageViewed() {
 // e.g. calling user.id will return the user's id
 function accountCreated(user) {
 	mixpanel.track("Account Created", {"Name":name, "Email":email, "Genre": favorite_genre})
+	mixpanel.identify(name)
 	
 }
 
@@ -15,14 +17,14 @@ function accountCreated(user) {
 // The "user" object contains the following properties: name, email, favorite_genre, plan, id
 // e.g. calling user.id will return the user's id
 function login(user) {
-	
+	mixpanel.track("Login")
 }
 
 // This function executes every time a song is played
 // The "song" object contains the following properties: title, artist, genre, duration
 // e.g. calling song.title will return the song's title
 function songPlayed(song) {
-	
+	mixpanel.track("Song Played")
 }
 
 // This function executes every time a song is purchased
