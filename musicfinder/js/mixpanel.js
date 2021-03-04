@@ -9,7 +9,7 @@ function signupPageViewed() {
 // e.g. calling user.id will return the user's id
 function accountCreated(user) {
 	mixpanel.track("Account Created", {"Name":user.name, "Email":user.email, "Genre": user.favorite_genre})
-	mixpanel.identify(user.name)
+	mixpanel.alias(user.name, mixpanel.get_distinct_id())
 	mixpanel.register({"Name":user.name, "Email":user.email, "Genre": user.favorite_genre})
 	
 }
