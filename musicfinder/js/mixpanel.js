@@ -1,8 +1,6 @@
 // This function executes when a user loads the sign up page
 function signupPageViewed() {
 	mixpanel.track("Signup Page Viewed")
-	mixpanel.identify(distinct_id)
-	var distinct_id = mixpanel.get_distinct_id()
 
 }
 
@@ -11,7 +9,6 @@ function signupPageViewed() {
 // e.g. calling user.id will return the user's id
 function accountCreated(user) {
 	mixpanel.track("Account Created", {"Name":user.name, "Email":user.email, "Genre": user.favorite_genre})
-	var disctinct_id = mixpanel.get_distinct_id()
 	mixpanel.identify(user.name)
 	mixpanel.register({"Name":user.name, "Email":user.email, "Genre": user.favorite_genre})
 	
