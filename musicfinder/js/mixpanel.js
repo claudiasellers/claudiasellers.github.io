@@ -10,6 +10,7 @@ function signupPageViewed() {
 function accountCreated(user) {
 	mixpanel.track("Account Created", {"Name":user.name, "Email":user.email, "Genre": user.favorite_genre})
 	mixpanel.identify(user.name)
+	mixpanel.register({"Name":user.name, "Email":user.email, "Genre": user.favorite_genre})
 	
 }
 
