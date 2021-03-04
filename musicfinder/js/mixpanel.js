@@ -1,12 +1,13 @@
 // This function executes when a user loads the sign up page
 function signupPageViewed() {
-	
+	mixpanel.track("Signup Page Viewed")
 }
 
 // This function executes after a user successfully signs up
 // The "user" object contains the following properties: name, email, favorite_genre, plan, id
 // e.g. calling user.id will return the user's id
 function accountCreated(user) {
+	mixpanel.track("Account Created", {"Name":name, "Email":email, "Genre": favorite_genre})
 	
 }
 
