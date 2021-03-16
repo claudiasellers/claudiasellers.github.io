@@ -7,7 +7,8 @@ function signupPageViewed() {
 // The "user" object contains the following properties: name, email, favorite_genre, plan, id
 // e.g. calling user.id will return the user's id
 function accountCreated(user) {
-	mixpanel.track("Account Created", {"email": user.email, "Items that they want to buy":user.favorite_items})
+	mixpanel.track("Account Created", {"email": user.email, "Items that they want to buy":user.favorite_items});
+	mixpanel.identify(user.email);
 	
 }
 
